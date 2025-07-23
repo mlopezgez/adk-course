@@ -237,42 +237,6 @@ DEFAULT_MODEL=gemini-2.0-flash
 - **Geocoding results**: Cached to improve response times
 - **Session data**: In-memory storage for development
 
-## Usage Examples
-
-### Production Deployment
-
-```python
-# FastAPI production deployment
-from api.main import app
-import uvicorn
-
-if __name__ == "__main__":
-    uvicorn.run(
-        app,
-        host="0.0.0.0",
-        port=8000,
-        workers=4
-    )
-```
-
-### Batch Processing
-
-```python
-from weather_agent.agent import root_agent
-
-# Process multiple cities
-cities = [
-    "Tokyo, Japan",
-    "London, UK",
-    "New York, USA",
-    "Sydney, Australia"
-]
-
-for city in cities:
-    response = root_agent.query(f"What's the weather in {city}?")
-    print(f"{city}: {response}\n")
-```
-
 ### Custom Tool Integration
 
 ```python
