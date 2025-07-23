@@ -14,6 +14,7 @@ This course demonstrates how to build AI agents with different capabilities and 
 ## Examples
 
 ### 🚀 **FastAPI Application** (`api/`)
+
 - **Production-ready web service** with FastAPI
 - Session management using `InMemorySessionService`
 - RESTful endpoints for agent interactions
@@ -21,6 +22,7 @@ This course demonstrates how to build AI agents with different capabilities and 
 - **Use case**: Scalable web service for agent deployment
 
 ### 🔧 **MCP Agent** (`mcp_agent/`)
+
 - **Model Context Protocol** integration for external tools
 - Filesystem operations (list directories, read files)
 - Google Maps API integration for location services
@@ -28,6 +30,7 @@ This course demonstrates how to build AI agents with different capabilities and 
 - **Use case**: Enterprise integrations with existing tools and services
 
 ### 🌤️ **Weather Agent** (`weather_agent/`)
+
 - **Real weather data** via Open-Meteo API
 - Geographic intelligence with geocoding
 - Timezone awareness and localization
@@ -35,6 +38,7 @@ This course demonstrates how to build AI agents with different capabilities and 
 - **Use case**: Production weather service with real-time data
 
 ### ⚡ **Multi-Tool Agent** (`multi_tool_agent/`)
+
 - Simple weather and time functions
 - Basic tool integration patterns
 - Educational implementation
@@ -43,12 +47,14 @@ This course demonstrates how to build AI agents with different capabilities and 
 ## Features
 
 ### Core ADK Components Demonstrated
+
 - **LlmAgent & Agent classes**: Different agent types and configurations
 - **Runner**: Execution engine for agent workflows
 - **SessionService**: State management and conversation continuity
 - **Tool Integration**: Multiple patterns for external API integration
 
 ### Advanced Features
+
 - **Caching**: Intelligent HTTP caching to reduce API calls
 - **Retry Logic**: Automatic retry with exponential backoff
 - **Error Handling**: Robust error handling with user-friendly messages
@@ -65,12 +71,14 @@ This course demonstrates how to build AI agents with different capabilities and 
 ## Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd course
 ```
 
 2. Install dependencies using uv (recommended):
+
 ```bash
 uv sync
 ```
@@ -95,35 +103,20 @@ curl -X POST "http://localhost:8000/query" \
 
 ### Weather Agent (Advanced)
 
-```python
-from weather_agent.agent import root_agent
-
-# Natural language weather queries
-response = root_agent.query("What's the weather in Paris, France?")
-print(response)
+```bash
+adk web
 ```
 
 ### MCP Agent (Filesystem + Maps)
 
-```python
-from mcp_agent.agent import root_agent
-
-# File operations and mapping queries
-response = root_agent.query("List files in the current directory")
-print(response)
-
-response = root_agent.query("Find directions from New York to Boston")
-print(response)
+```bash
+adk web
 ```
 
 ### Multi-Tool Agent (Basic)
 
-```python
-from multi_tool_agent.agent import root_agent
-
-# Simple queries for demonstration
-response = root_agent.query("What time is it in New York?")
-print(response)
+```bash
+adk web
 ```
 
 ## API Endpoints (FastAPI Application)
@@ -155,21 +148,25 @@ print(result["response"])
 ## Dependencies
 
 ### Core Dependencies
+
 - **google-adk**: Agent Development Kit framework
 - **fastapi**: Modern web framework for APIs
 - **pydantic**: Data validation and settings management
 
 ### Weather & Location Services
+
 - **openmeteo-requests**: Weather data API client
 - **geopy**: Geocoding services for location resolution
 - **timezonefinder**: Timezone detection from coordinates
 
 ### Data Processing & Utilities
+
 - **pandas**: Data manipulation and analysis
 - **requests-cache**: HTTP caching for improved performance
 - **retry-requests**: Automatic retry logic for HTTP requests
 
 ### Development & Documentation
+
 - **uvicorn**: ASGI server for FastAPI
 - **docling**: Document processing capabilities
 
@@ -235,6 +232,7 @@ DEFAULT_MODEL=gemini-2.0-flash
 ```
 
 ### Caching Configuration
+
 - **Weather data**: Cached for 1 hour to reduce API calls
 - **Geocoding results**: Cached to improve response times
 - **Session data**: In-memory storage for development
@@ -395,6 +393,7 @@ python -m uvicorn api.main:app --log-level debug
 ## Support
 
 For questions or issues:
+
 1. Check the existing documentation and examples
 2. Review the troubleshooting section
 3. Search existing issues in the repository
@@ -402,4 +401,4 @@ For questions or issues:
 
 ---
 
-*This course demonstrates practical AI agent development patterns using Google's ADK, from simple prototypes to production-ready services with comprehensive tool integration.*
+_This course demonstrates practical AI agent development patterns using Google's ADK, from simple prototypes to production-ready services with comprehensive tool integration._
